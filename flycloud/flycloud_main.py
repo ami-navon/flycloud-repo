@@ -1,4 +1,20 @@
+# pip install -U poetry
 # python flycloud/flycloud_main.py s3://centrical-data-bucket/tracking_video/20250731/debug.mp4
+# 
+# use python library poetry to build a python .whl package named flycloud    │
+# │   version 1.0.0 that includes the library file flycloud/flycloud_main.py.    │
+# │   add all necessary files. add requirements.txt file the includes refrences  │
+# │   to boto3==1.37.18 and google-cloud-storage==2.14.0
+# 
+# poetry build
+#
+# remove the usage of poetry and use a method to build a python library      │
+# │   using standard python , without a library that uses no dependencies on     │
+# │   poetry or other add-on library
+#
+# python setup.py clean
+# python setup.py bdist_wheel
+
 import os
 import sys
 import boto3
@@ -60,9 +76,10 @@ def _download_from_gcs(gcs_url, local_folder):
     return local_path
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the flycloud CLI."""
     if len(sys.argv) < 2:
-        print("Usage: python flycloud_main.py <s3://bucket/file or gs://bucket/file> [local_folder]")
+        print("Usage: flycloud-download <s3://bucket/file or gs://bucket/file> [local_folder]")
         sys.exit(1)
     
     url = sys.argv[1]
@@ -74,3 +91,7 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error downloading file: {e}")
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
