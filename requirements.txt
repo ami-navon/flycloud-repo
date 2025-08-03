@@ -1,0 +1,2 @@
+boto3==1.37.18
+google-cloud-storage==2.14.0

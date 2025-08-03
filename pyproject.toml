@@ -1,0 +1,18 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "flycloud"
+version = "1.0.0"
+description = "A cloud storage utility library for AWS S3 and GCP"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{include = "flycloud"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+boto3 = "1.37.18"
+google-cloud-storage = "2.14.0"
+
+[tool.poetry.group.dev.dependencies]
