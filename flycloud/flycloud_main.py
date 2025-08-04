@@ -1,5 +1,5 @@
 # pip install -U poetry
-# python flycloud/flycloud_main.py s3://centrical-data-bucket/tracking_video/20250731/debug.mp4
+# python flycloud/flycloud_main.py s3://.../debug.mp4
 # 
 # use python library poetry to build a python .whl package named flycloud    │
 # │   version 1.0.0 that includes the library file flycloud/flycloud_main.py.    │
