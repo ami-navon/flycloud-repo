@@ -1,4 +1,4 @@
-# python flycloud/flycloud_main.py s3://centrical-data-bucket/tracking_video/20250731/debug.mp4
+# python flycloud/flycloud_main.py s3://.../debug.mp4
 import os
 import sys
 import boto3
